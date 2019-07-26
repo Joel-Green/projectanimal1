@@ -23,9 +23,16 @@ export class adoptUs extends Component {
              
              
              <View>
-           <Image source={require('../assets/d.jpg')} style={styles.TileImg}/>
+           <Image source={require('../assets/bulldog.jpg')} style={styles.TileImg}/>
            </View>
-           <Text style={styles.TileHead}>Hello There Im The Google Earth</Text>
+           <Text h2style={styles.TileHead}>Bulldog:Richie</Text>
+           <Text style={{color: '#000' , fontSize:25, alignSelf:"center", marginTop:20}}
+           Breed:American Bulldog Mix
+           Gender:Male
+           Color:White
+           Age:6 years old Adult
+           Size :(when grown)Large 61-100 lbs (28-45 kg)
+           </Text>
            </View>
            <View style={styles.Tile}>
              

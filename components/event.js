@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet,TouchableOpacity } from 'react-native'
+import { Text, View,StyleSheet,TouchableOpacity ,Image} from 'react-native'
 
-import { View, Text, Image } from 'react-native'
-import { Card, ListItem, Button } from 'react-native-elements'
+import { Card, ListItem, Button,Avatar } from 'react-native-elements'
 const users = [
     {
        name: 'brynn',
-       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+       Avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
     }
    ]
    
@@ -36,7 +35,7 @@ export class event extends Component {
         )
     }
 }
-
+<View>
    // implemented without image with header
    <Card title="CARD WITH DIVIDER">
      {
@@ -55,7 +54,7 @@ export class event extends Component {
      }
    </Card>
    
-   // implemented without image without header, using ListItem component
+  { // implemented without image without header, using ListItem component}
     <Card containerStyle={{padding: 0}} >
      {
        users.map((u, i) => {
@@ -72,7 +71,7 @@ export class event extends Component {
    </Card>
    
    
-   // implemented with Text and Button as children
+   {//implemented with Text and Button as children}
    <Card
      title='HELLO WORLD'
      image={require('../images/pic2.jpg')}>
@@ -85,6 +84,7 @@ export class event extends Component {
        buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
        title='VIEW NOW' />
    </Card>
+   </View>
 const styles = StyleSheet.create({
     logo: {
         height: 40,

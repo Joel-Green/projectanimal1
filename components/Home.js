@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Button, Image } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Button, Image ,SocialIcon} from 'react-native'
 
 class homeScreen extends Component {
     constructor(props) {
@@ -8,10 +8,13 @@ class homeScreen extends Component {
     }
     goto() {
         this.props.navigation.navigate('AboutUs');
+        this.props.navigation.navigate('AdoptUs');
     }
     render() {
         return (
             <View>
+                <Image source={{uri: 'http://i.imgur.com/IGlBYaC.jpg'}} style={styles.backgroundImage}>
+        <View style={styles.overlay}/></Image>
                 <View style={styles.header}>
                     <TouchableOpacity style={styles.hamburger} onPress={() => this.props.navigation.toggleDrawer()}>
                         <View style={styles.hamburgerOdd} ></View>
@@ -24,24 +27,67 @@ class homeScreen extends Component {
                     </TouchableOpacity >
                     <View style={styles.logoMain}>
                         <Text style={styles.logoText}>
-                            TestAPP
+                            PetLovers
                         </Text>
-                        <Image style={styles.logo} source={require('../assets/d.jpg')} />
+                        <Image style={styles.logo} source={require('../assets/logo.png')} />
                     </View>
                 </View>
                 <View>
                     <View>
-                    <Text style={{ color: '#000' , fontSize:25, alignSelf:"center", marginTop:20}}>Hi There !!!</Text>
-                    <Text style={{ color: '#000' , fontSize:25, alignSelf:"center", marginTop:20}}>Hope You Enjoy This App</Text>
+                    <Text style={{ color: '#000' , fontSize:25, alignSelf:"center", marginTop:20}}>Pet Lover!!!</Text>
+                    <Text style={{ color: '#000' , fontSize:25, alignSelf:"center", marginTop:20}}>Get a loyal best friend for yourself</Text>
                     </View>
                     <View>
-                        <Image style={[styles.img, {height:250, borderRadius:20, marginBottom:10, }]} source={require('../assets/images.png')} />
-                        <Button style={styles.btnTest} title="Go to about" onPress={() => this.goto()} />
+                        <Image style={[styles.img, {height:250, borderRadius:20, marginBottom:10, }]} source={require('../assets/mnpg.jpg')} />
+                        <Button style={styles.btnTest} title="Go to adopt" onPress={() => this.goto(adoptUs)} />
                         <TouchableOpacity style={styles.btnTest} onPress={() => this.goto()}>
                             <Text style={{alignSelf:"center"}}>
                                 Go to About Us
                             </Text>
                         </TouchableOpacity>
+                    </View>
+                    <View>
+        <SocialIcon type='twitter'/>
+        <SocialIcon
+  raised={false}
+  type='gitlab'
+/>
+
+<SocialIcon
+  light
+  type='medium'
+/>
+
+<SocialIcon
+  light
+  raised={false}
+  type='medium'
+/>
+
+
+// Button
+<SocialIcon
+  title='Sign In With Facebook'
+  button
+  type='facebook'
+/>
+
+<SocialIcon
+  title='Some Twitter Message'
+  button
+  type='twitter'
+/>
+
+<SocialIcon
+  button
+  type='medium'
+/>
+
+<SocialIcon
+  button
+  light
+  type='instagram'
+/>
                     </View>
 
                 </View>
@@ -52,6 +98,20 @@ class homeScreen extends Component {
     }
 }
 const styles = StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        width: null,
+        height: null
+    },
+        overlay: {
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            backgroundColor: 'red',
+            opacity: 0.3
+          },
     logo: {
         height: 40,
         width: 60,

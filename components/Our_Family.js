@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import {View,Text,StyleSheet,TouchableOpacity,ListItem} from 'react-native'
 export class detailsScreen extends Component {
     render() {
         return (
@@ -20,7 +20,15 @@ export class detailsScreen extends Component {
                         </Text>
                     </View>
                 </View>
-                <Text style={{color:'#000'}}>This is detailsScreen</Text>
+                <ListItem leftAvatar={{
+                     title: name[0],
+                      source: { uri: avatar_url },
+                      showEditButton: true,
+  }}
+  title={name}
+  subtitle={role}
+  chevron
+/>;
             </View>
         )
     }
